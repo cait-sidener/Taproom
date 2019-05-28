@@ -1,86 +1,236 @@
-@import url(https://fonts.googleapis.com/css?family=Fjalla+One:400|Roboto:400,400italic,700);
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
-body {
-  background-color:#282423;
+/* Calendar */
+header {
+  color: #fff;
+  /* margin-top: -40%; */
 }
 
-.jzdbox1 {
-  width:315px; 
-  background:#332f2e; 
-  border-radius:5px; 
-  overflow:hidden; 
-  display:block; 
-  margin-bottom:10px; 
-  box-shadow:0 0 10px #201d1c; 
-  margin:0 auto; 
-  margin-top:100px;
+main {
+  background-color: #F6E9DC;
+  -ms-flex-preferred-size: 980px;
+      flex-basis: 980px;
 }
 
-.jzdcal {
-  padding:0 10px 10px 10px; 
-  box-sizing:border-box!important; 
-  background:#749d9e; 
-  background: -webkit-linear-gradient(#749d9e, #b3a68b)!important; 
-  background: -o-linear-gradient(#749d9e, #b3a68b)!important; 
-  background: -moz-linear-gradient(#749d9e, #b3a68b)!important; 
-  background: linear-gradient(#749d9e, #b3a68b)!important;
+.calendar {
+  table-display: fixed;
+  width: 100%;
 }
 
-.jzdcalt {
-  font:18px 'Roboto'; 
-  font-weight:700; 
-  color:#f7f3eb; 
-  display:block; 
-  margin:18px 0 0 0; 
-  text-transform:uppercase; 
-  text-align:center; 
-  letter-spacing:1px;
+.calendar__day__header,
+.calendar__day__cell {
+  border: 2px solid #e66053;
+  text-align: center;
+  width: 100% / 7;
+  vertical-align: middle;
+}
+.calendar__day__header:first-child,
+.calendar__day__cell:first-child {
+  border-left: none;
+}
+.calendar__day__header:last-child,
+.calendar__day__cell:last-child {
+  border-right: none;
 }
 
-.jzdcal span {
-  font:11px 'Roboto'; 
-  font-weight:400; 
-  color:#f7f3eb; 
-  text-align:center; 
-  width:42px; 
-  height:42px; 
-  display:inline-block; 
-  float:left; 
-  overflow:hidden; 
-  line-height:40px;
+.calendar__day__header,
+.calendar__day__cell {
+  padding: .75rem 0 1.5rem;
 }
 
-.jzdcal .jzdb:before {
-  opacity:0.3; 
-  content:'o';
+.calendar__banner--month {
+  text-align: center;
+  padding: .75rem;
+}
+.calendar__banner--month h1 {
+  background-color: #4E4F4A;
+  color: #F6E9DC;
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  padding: .5rem 2rem;
+  text-transform: uppercase;
 }
 
-.circle {
-  border:1px solid #f7f3eb; 
-  box-sizing:border-box!important; 
-  border-radius:200px!important;
+.calendar__day__header {
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
-span[data-title]:hover:after, 
-div[data-title]:hover:after {
-  font:11px 'Roboto'; 
-  font-weight:400; 
-  content:attr(data-title); 
-  position:absolute; 
-  margin:0 0 100px; 
-  background:#282423; 
-  border:1px solid #f7f3eb; 
-  color:#f7f3eb; 
-  padding:5px; 
-  z-index:9999; 
-  min-width:150px; 
-  max-width:150px;
+.calendar__day__cell {
+  font-size: 4rem;
+  position: relative;
 }
 
-.slideshow {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: -8%;
-    text-align: center;
-  }
+tr:nth-child(odd) > .calendar__day__cell:nth-child(odd) {
+  color: #e66053;
+}
+
+tr:nth-child(even) > .calendar__day__cell:nth-child(even) {
+  color: #e66053;
+}
+
+.calendar__day__cell[data-moon-phase] {
+  background-color: #e66053;
+  color: #4E4F4A;
+}
+.calendar__day__cell[data-moon-phase]:after {
+  content: attr(data-moon-phase);
+  color: #F6E9DC;
+  display: block;
+  font-weight: 400;
+  font-size: .75rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 1rem;
+  text-transform: uppercase;
+}
+
+.calendar__day__cell[data-bank-holiday] {
+  background-color: #4E4F4A;
+  border-color: #4E4F4A;
+  color: #F6E9DC;
+}
+.calendar__day__cell[data-bank-holiday]:after {
+  content: attr(data-bank-holiday);
+  color: #F6E9DC;
+  display: block;
+  font-size: .75rem;
+  font-weight: 400;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 1rem;
+  text-transform: uppercase;
+}
+
+/* Footer */
+footer {
+  height: 100;
+}
+.menu {
+  background-color: #000;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  display: inline-block;
+  cursor: pointer;
+  pointer-events: none;
+  padding: 2%;
+  height: auto;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  margin-top: 50px;
+}
+.menu:hover {
+  pointer-events: all;
+}
+
+.spacer {
+  display: inline-block;
+  width: 80px;
+  margin-left: 15px;
+  margin-right: 15px;
+  vertical-align: middle;
+  cursor: pointer;
+  position: relative;
+}
+.spacer:before {
+  content: "";
+  position: absolute;
+  border-bottom: 1px solid #ffffff;
+  height: 1px;
+  width: 0%;
+  transition: width 0.25s ease;
+  transition-delay: 0.7s;
+}
+.item {
+  color: #fff;
+  position: relative;
+  display: inline-block;
+  margin-right: 30px;
+  top: 10px;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  transition-delay: 0;
+}
+span {
+  transition: color 0.5s ease;
+}
+.item:hover {
+  color: #e2c044;
+  text-decoration: none;
+  transform: translateY(-0.25em);
+}
+.menu:hover .spacer:before {
+  width: 100%;
+  transition-delay: 0s;
+}
+.menu:hover .item {
+  opacity: 1;
+  top: 0px;
+}
+.item:nth-child(1) {
+  transition-delay: 0.45s;
+}
+.item:nth-child(2) {
+  transition-delay: 0.4s;
+}
+.item:nth-child(3) {
+  transition-delay: 0.35s;
+}
+.item:nth-child(4) {
+  transition-delay: 0.3s;
+}
+.item:nth-child(5) {
+  transition-delay: 0.25s;
+}
+.item:nth-child(6) {
+  transition-delay: 0.2s;
+}
+.item:nth-child(7) {
+  transition-delay: 0.15s;
+}
+.item:nth-child(8) {
+  transition-delay: 0.1s;
+}
+.item:nth-child(9) {
+  transition-delay: 0.05s;
+}
+.item:nth-child(10) {
+  transition-delay: 0s;
+}
+.menu:hover .item:nth-child(1) {
+  transition-delay: 0.25s;
+}
+.menu:hover .item:nth-child(2) {
+  transition-delay: 0.3s;
+}
+.menu:hover .item:nth-child(3) {
+  transition-delay: 0.35s;
+}
+.menu:hover .item:nth-child(4) {
+  transition-delay: 0.4s;
+}
+.menu:hover .item:nth-child(5) {
+  transition-delay: 0.45s;
+}
+.menu:hover .item:nth-child(6) {
+  transition-delay: 0.5s;
+}
+.menu:hover .item:nth-child(7) {
+  transition-delay: 0.55s;
+}
+.menu:hover .item:nth-child(8) {
+  transition-delay: 0.6s;
+}
+.menu:hover .item:nth-child(9) {
+  transition-delay: 0.65s;
+}
+.menu:hover .item:nth-child(10) {
+  transition-delay: 0.7s;
+}
