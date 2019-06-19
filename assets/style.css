@@ -1,9 +1,15 @@
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+.container {
+  min-width: 600px;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+}
 
 header {
   background-color: #000;
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
-	box-sizing: border-box;
+  box-sizing: border-box;
 	width: 100%;
 	text-align: left;
   font: normal 16px sans-serif;
@@ -12,6 +18,7 @@ header {
 }
 
 .header-distributed p.header-links{
+  font-family: 'Montserrat', sans-serif;
 	font-size:18px;
 	font-weight: bold;
 	color:  #ffffff;
@@ -43,108 +50,6 @@ header {
 	margin-left: 3px;
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-}
-
-/* Calendar */
-header {
-  color: #fff;
-  /* margin-top: -40%; */
-}
-
-main {
-  background-color: #faebd7;
-  -ms-flex-preferred-size: 980px;
-      flex-basis: 980px;
-}
-
-.calendar {
-  display: fixed;
-  width: 100%;
-}
-
-.calendar__day__header,
-.calendar__day__cell {
-  border: 2px solid #000;
-  text-align: center;
-  width: 100% / 7;
-  vertical-align: middle;
-}
-.calendar__day__header:first-child,
-.calendar__day__cell:first-child {
-  border-left: none;
-}
-.calendar__day__header:last-child,
-.calendar__day__cell:last-child {
-  border-right: none;
-}
-
-.calendar__day__header,
-.calendar__day__cell {
-  padding: 1.3rem 0 1.5rem;
-}
-
-.calendar__day__header {
-  font-size: 1.3rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.calendar__day__cell {
-  font-size: 4rem;
-  position: relative;
-}
-
-tr:nth-child(odd) > .calendar__day__cell:nth-child(odd) {
-  color: #ff0000;
-}
-
-tr:nth-child(even) > .calendar__day__cell:nth-child(even) {
-  color: #ff0000;
-}
-
-.calendar__day__cell[data-moon-phase] {
-  background-color: #ff0000;
-  color: #000;
-}
-.calendar__day__cell[data-moon-phase]:after {
-  content: attr(data-moon-phase);
-  color: #000;
-  display: block;
-  font-weight: 400;
-  font-size: .1rem;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 3rem;
-  text-transform: uppercase;
-}
-
-.calendar__day__cell[data-bank-holiday] {
-  background-color:#000;
-  border-color: #000;
-}
-
-.calendar__day__cell[data-bank-holiday]:after {
-  content: attr(data-bank-holiday);
-  color: #ff0000;
-  display: block;
-  font-size: .1rem;
-  font-weight: 400;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 3rem;
-  text-transform: uppercase;
-}
-
-.month {
-  text-align: center;
-  font-size: 4.5em;
-}
-
 /* Footer */
 .footer-distributed{
   background-color: #000;
@@ -152,8 +57,8 @@ tr:nth-child(even) > .calendar__day__cell:nth-child(even) {
 	box-sizing: border-box;
 	width: 100%;
 	text-align: left;
-	font: normal 16px sans-serif;
-
+	font: normal 16px;
+  font-family: 'Montserrat', sans-serif;
 	padding: 45px 50px;
 	margin-top: 80px;
 }
@@ -238,7 +143,10 @@ tr:nth-child(even) > .calendar__day__cell:nth-child(even) {
 
 .archives {
   color: #fff; 
-  text-align: center
+  letter-spacing: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3em;
+  text-align: center;
 }
 
 .mySlides {
@@ -249,4 +157,8 @@ tr:nth-child(even) > .calendar__day__cell:nth-child(even) {
   height: 25px;
   width: 25px;
   padding: 0
+}
+
+.w3-display-bottomcenter {
+  font-family: carbontyperegular;
 }
