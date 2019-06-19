@@ -204,6 +204,10 @@ tr:nth-child(even) > .calendar__day__cell:nth-child(even) {
 
 @media (max-width: 600px) {
 
+  .calendar {
+    width: 100%
+  }
+
   header {
     background-color: #000;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
