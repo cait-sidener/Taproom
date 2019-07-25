@@ -141,6 +141,21 @@ html {
 
 @media (max-width: 700px) {
 
+	.contain {
+		display: grid;
+		grid-gap: 10px;
+		grid-template-columns: 20fr;
+		grid-template-rows: 150px 425px 150px;
+		grid-template-areas:
+		  "header     header      header"
+		  "content    content     content"
+		  "footer     footer      footer"
+	  }
+
+	  .content {
+		  margin-top: -35%;
+	  }
+
 	.fa-facebook,
 	.fa-twitter,
 	.fa-spotify,
@@ -168,5 +183,10 @@ html {
 		height: 100%;
 		width: 100%;
 		font-size: 80%;
+	}
+
+	.w3-display-left,
+	.w3-display-right {
+		font-size:100% !important;
 	}
   }
